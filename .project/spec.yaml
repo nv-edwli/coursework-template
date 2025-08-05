@@ -7,24 +7,12 @@ meta:
     labels: []
     createdOn: "2025-08-05T19:24:59Z"
     defaultBranch: main
-layout:
-    - path: code/
-      type: code
-      storage: git
-    - path: models/
-      type: models
-      storage: gitlfs
-    - path: data/
-      type: data
-      storage: gitlfs
-    - path: data/scratch/
-      type: data
-      storage: gitignore
+layout: []
 environment:
     base:
         registry: nvcr.io
-        image: vjrv0zpbsw9c/internal/python-basic:1.0.8
-        build_timestamp: "20250729154429"
+        image: nvidia/ai-workbench/python-basic:1.0.6
+        build_timestamp: "20231114175838"
         name: Python Basic
         supported_architectures: []
         cuda_version: ""
@@ -53,8 +41,8 @@ environment:
                 url_command: jupyter lab list | head -n 2 | tail -n 1 | cut -f1 -d' ' | grep -v 'Currently'
         programming_languages:
             - python3
-        icon_url: https://workbench.download.nvidia.com/static/img/ai-workbench-icon-rectangle.jpg
-        image_version: 1.0.8
+        icon_url: ""
+        image_version: 1.0.2
         os: linux
         os_distro: ubuntu
         os_distro_release: "22.04"
@@ -76,15 +64,25 @@ environment:
                 - python3-pip
                 - vim
             - name: pip
-              binary_path: /usr/bin/pip
+              binary_path: /usr/local/bin/pip
               installed_packages:
-                - jupyterlab==4.3.5
+                - jupyterlab==4.0.7
         package_manager_environment:
             name: ""
             target: ""
     compose_file_path: ""
 execution:
-    apps: []
+    apps:
+        - name: VSCode
+          type: vs-code
+          class: native
+          start_command: ""
+          health_check_command: '[ \$(ps aux | grep ".vscode-server" | grep -v grep | wc -l ) -gt 4 ] && [ \$(ps aux | grep "/.vscode-server/bin/.*/node .* net.createConnection" | grep -v grep | wc -l) -gt 0 ]'
+          stop_command: ""
+          user_msg: ""
+          logfile_path: ""
+          timeout_seconds: 120
+          icon_url: ""
     resources:
         gpu:
             requested: 0
@@ -95,3 +93,7 @@ execution:
           target: /project/
           description: Project directory
           options: rw
+        - type: volume
+          target: /nvwb-shared-volume/
+          description: ""
+          options: volumeName=nvwb-shared-volume
