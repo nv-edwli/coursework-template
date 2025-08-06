@@ -1,14 +1,10 @@
-# Visual Search and Summarization Developer Workshop
+# Course Title
 
-<img src="_static/robots/video.png" alt="VSS Robot Character" style="float:right; max-width:350px;margin:15px;" />
+<img src="_static/robots/video.png" alt="Robot Character" style="float:right; max-width:350px;margin:15px;" />
 
-The [NVIDIA AI Blueprint for video search and summarization (VSS)](https://build.nvidia.com/nvidia/video-search-and-summarization) helps you build video analytics AI agents that let industrial operators communicate with their infrastructure through search and summarization of live or archived video sensor data. It integrates vision language models (VLMs), large language models (LLMs), and NVIDIA NIM™ to deliver a whole new level of collaboration.
-
-This workshop will help get you to get started integrating this blueprint in your enterprise. At the end of this workshop, you will go home with:
+This course will help get you to get started XYZ. At the end of this course, you will go home with:
 
  - access to NVIDIA cloud resources and documentation
- - a running copy of the VSS blueprint
- - turn-key, portable, developement environment
- - a custom integrated application
+ - what else? list them here
 
- The entire lab can take anywhere from 1 to 2 hours to complete.
+ The entire course can take anywhere from X to Y hours/minutes to complete.

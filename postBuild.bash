@@ -10,8 +10,8 @@ EOF
 # configure the application launcher
 mkdir -p ~/.local/share/jupyter/jupyter_app_launcher
 cat > ~/.local/share/jupyter/jupyter_app_launcher/jp_app_launcher.yaml <<EOF
-- title: Visual Search and Summarization
-  description: Learn to implement VSS at your company.
+- title: Sample Course Title
+  description: Learn more about <topic>.
   icon: /project/.workshop/_static/nvidia-icon.svg
   source: http://localhost:\$PORT/
   cwd: "/project/.workshop"
@@ -21,5 +21,5 @@ cat > ~/.local/share/jupyter/jupyter_app_launcher/jp_app_launcher.yaml <<EOF
     - "http.server"
     - "\$PORT"
   type: local-server
-  catalog: NVIDIA DevX Workshop
+  catalog: NVIDIA Developer Course
 EOF
