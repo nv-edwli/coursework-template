@@ -1,73 +1,56 @@
-# Visual Inspection Agent
+# Section Four
 
-<img src="_static/robots/blueprint.png" alt="VSS Robot Character" style="float:right; max-width:350px;margin:15px;" />
+<img src="_static/robots/blueprint.png" alt="Robot Character" style="float:right; max-width:350px;margin:15px;" />
 
-So far, we have focused mostly on the VSS Blueprint: its features, capabilities, and API.
-We used that knowledge to create the core components for a functional system.
+TODO: Insert Content Here
 
-Now we need to integrate this new tooling with our existing processes.
+## Subsection A
 
-## Automated Inspections and Audits
+TODO: Insert Content Here
 
-Today, we will be assiting local governments with infrastructure inspections.
-Drone pilots will submit inspection footage which will then be triaged by our AI agent.
+## Subsection B
 
-It is critical that findings from these videos get routed to the correct department.
-It is also vital that safety related issues be escalated to the highest priority.
+<img src="_static/robots/wrench.png" alt="Robot Character" style="float:left; max-width:200px;margin:15px;" />
 
-## Create your application
-
-<img src="_static/robots/wrench.png" alt="VSS Robot Character" style="float:left; max-width:200px;margin:15px;" />
-
-Open <a style="cursor: pointer;" onclick="openOrCreateFileInJupyterLab('labs/bridge_inspector.py');"><i class="fa-brands fa-python"></i> labs/bridge_inspector.py</a> and we can get started by checking out the initial code.
+Open <a style="cursor: pointer;" onclick="openOrCreateFileInJupyterLab('labs/sample_file.py');"><i class="fa-brands fa-python"></i> labs/bridge_inspector.py</a> and we can get started by checking out the initial code.
 
 This file already has a handful of functions templated. We will work on filling these in.
 
-At the bottom of the file is a function called `main`. This is the entry point to our application.
-This funtion accepts two arguments, both of which will be defined on the command line at run time.
+TODO: Insert Content Here
 
-This function has the following structure:
-  - Read in the first model id
-  - **For each video file:**
-    - Upload the video
-    - Summarize the video
-    - Chat with the video to get more detail
+### Subsection i
 
-The reamaining functions will be called by the `main` function to accomplish this task.
+TODO: Insert Content Here
 
-### Query Model ID
-
-Inside of the `main` function, at <a style="cursor: pointer;" onclick="goToLineAndSelect('labs/bridge_inspector.py', '# get the first model name');"># get the first model name</a>, we need to call the <a style="cursor: pointer;" onclick="goToLineAndSelect('labs/bridge_inspector.py', 'def lookup_model_id');">lookup_model_id</a> funtion. The function also needs to be populated.
-
-Reference the previous labs to complete this function.
-
-### Upload the video file
+### Subsection ii
 
 At this point, we will loop over all the video files specified by the user at runtime. We need to call the function
-<a style="cursor: pointer;" onclick="goToLineAndSelect('labs/bridge_inspector.py', 'def upload_video_to_vss');">upload_video_to_vss</a>
+<a style="cursor: pointer;" onclick="goToLineAndSelect('labs/sample_file.py', 'def upload_video_to_vss');">upload_video_to_vss</a>
 function in the
-<a style="cursor: pointer;" onclick="goToLineAndSelect('labs/bridge_inspector.py', '# upload the video');"># upload the video</a> block of code.
+<a style="cursor: pointer;" onclick="goToLineAndSelect('labs/sample_file.py', '# upload the video');"># upload the video</a> block of code.
 
-Remember this is done using a `POST` request and uploading the bytes.
+TODO: Insert Content Here
 
-### Video Summarization
+### Subsection iii
 
-<a style="cursor: pointer;" onclick="goToLineAndSelect('labs/bridge_inspector.py', 'def summarize_video');">summarize_video</a> should use the uploaded video ID to request a summary of the video. In the last excercise, we made some effective prompts that will help here.
+<a style="cursor: pointer;" onclick="goToLineAndSelect('labs/sample_file.py', 'def summarize_video');">summarize_video</a> should use the uploaded video ID to request a summary of the video. In the last excercise, we made some effective prompts that will help here.
 
-This function should be invoked by <a style="cursor: pointer;" onclick="goToLineAndSelect('labs/bridge_inspector.py', '# summarize the video');"># summarize the video</a> block of code.
+This function should be invoked by <a style="cursor: pointer;" onclick="goToLineAndSelect('labs/sample_file.py', '# summarize the video');"># summarize the video</a> block of code.
 
-Make sure you enable chat!
+TODO: Insert Content Here
 
-### Chat with your video
+### Subsection iv
 
-Use the `Chat` class from before (it is already imported from `helpers`), and connect to the VSS Chat server. In this example, the VSS URL is provided at runtime. Put this code in the <a style="cursor: pointer;" onclick="goToLineAndSelect('labs/bridge_inspector.py', '# summarize the video');"># summarize the video</a> block.
+Use the `Chat` class from before (it is already imported from `helpers`), and connect to the VSS Chat server. In this example, the VSS URL is provided at runtime. Put this code in the <a style="cursor: pointer;" onclick="goToLineAndSelect('labs/sample_file.py', '# summarize the video');"># summarize the video</a> block.
 
-<a style="cursor: pointer;" onclick="goToLineAndSelect('labs/bridge_inspector.py', '# ask follow up questions');"># ask follow up questions</a> should use the chat API to request additional information. We need to ask the chat model about maintenance escalations, priority of repairs, a report title, and a list of any emergency repairs that are needed.
+<a style="cursor: pointer;" onclick="goToLineAndSelect('labs/sample_file.py', '# ask follow up questions');"># ask follow up questions</a> should use the chat API to request additional information. 
 
-We haven't made prompts for this yet, but try it out yourself.
+TODO: Insert Content Here
 
 <details>
 <summary><b>💢 Stuck?</b></summary>
+
+TODO: Insert Content Here
 
 ```python
 escalations = chat_client.query("List any necessary escelations for maintenance.")
@@ -78,24 +61,12 @@ emergencies = chat_client.query("Does this the bridge require immediate structur
 
 </details>
 
-## Testing you application
+## Subsection C
 
-To test your application, open a Terminal in Jupyter and navigate to `labs/`.
+TODO: Insert Content Here
 
-```bash
-cd labs
-```
+## Subsection D
 
-Run your application from the command line:
+<img src="_static/robots/tpose.png" alt="Robot Character" style="float:right; max-width:350px;margin:15px;" />
 
-```bash
-./bridge_inspector.py assets/bridge.mp4
-```
-
-If everything goes to plan, this will write a full markdown report to the shell.
-
-## 🦾 Congratulations on your new agent
-
-<img src="_static/robots/tpose.png" alt="VSS Robot Character" style="float:right; max-width:350px;margin:15px;" />
-
-You now have a fully fleged Video Search and Summarization agent from the NVIDIA AI Blueprint. This can be further integrated into your bussiness processes to unlock domain knowledge from video.
+TODO: Insert Content Here
